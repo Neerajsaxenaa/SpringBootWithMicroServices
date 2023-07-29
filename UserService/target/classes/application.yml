@@ -1,0 +1,15 @@
+#server:
+#  port: 9001
+#  
+##  spring :
+##    application :
+##    name: userSerivice 
+#    
+#  spring :
+#      application :
+#        name: userSerivice 
+#eureka:
+#  instance:
+#    hostname: localhost
+#
+#    

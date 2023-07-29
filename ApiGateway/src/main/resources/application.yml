@@ -1,0 +1,12 @@
+#cloud:
+#  gateway:
+#    routes:
+#    - id: userService
+#       uri : lb://userService
+#       predicates: 
+#       - path=/user/**
+#       
+#    - id: contactService
+#       uri : lb://contactService
+#       predicates: 
+#       - path=/contact/**   

@@ -4,16 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-	
+
 	private Long userId;
 	private String name;
 	private String phone;
-	
+
 	List<Contact> contacts = new ArrayList<>();
 
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public User(Long userId, String name, String phone, List<Contact> contacts) {
@@ -23,15 +22,13 @@ public class User {
 		this.phone = phone;
 		this.contacts = contacts;
 	}
-	
+
 	public User(Long userId, String name, String phone) {
 		super();
 		this.userId = userId;
 		this.name = name;
 		this.phone = phone;
-		
 	}
-
 
 	public Long getUserId() {
 		return userId;
@@ -61,22 +58,8 @@ public class User {
 		return contacts;
 	}
 
-	
-
-//	@Override
-//	public String toString() {
-//		return "User [userId=" + userId + ", name=" + name + ", phone=" + phone + ", contacts=" + contacts + "]";
-//	}
-
-	
-
-	public void setContacts(String contact) {
-		// TODO Auto-generated method stub
+	public void setContacts(List<Contact> contacts) {
 		this.contacts = contacts;
 	}
-	
-	
-	
-	
 
 }

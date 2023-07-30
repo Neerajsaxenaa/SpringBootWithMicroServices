@@ -16,8 +16,8 @@ import com.deepMindz.UserService.service.UserService;
 @RestController
 @RequestMapping("/user")
 public class HomeController {
-
-	UserService userService= new UserService();
+        @Autowired
+	private UserService userService;
 	@Autowired
 	private RestTemplate restTemplate;
 
@@ -28,8 +28,8 @@ public class HomeController {
 	
 	@GetMapping("/{userId}")
 	public User getUser(@PathVariable("userId") Long userId) {
-		User user = userService.getUser(userId);
-		String contact  =restTemplate.getForObject("http://contactService/contact/user/"+user.getUserId(), String.class);
+		User user = this.userService.getUser(userId);
+		List contact  =restTemplate.getForObject("http://contactService/contact/user/"+user.getUserId(), List.class);
 		user.setContacts(contact);
 		return user;
 	

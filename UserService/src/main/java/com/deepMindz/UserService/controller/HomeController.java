@@ -16,20 +16,11 @@ import com.deepMindz.UserService.service.UserService;
 @RestController
 @RequestMapping("/user")
 public class HomeController {
-	
-//	@Autowired
-	 UserService userService= new UserService();
-	 
-//	 @Autowired
-//	 private UserService userService;
-	
+
+	UserService userService= new UserService();
 	@Autowired
 	private RestTemplate restTemplate;
-	 
-	 
-//	 RestTemplate restTemplate = new RestTemplate();
-	
-	
+
 	@GetMapping("/test/test")
 	public String checkTest() {
 		return "this is test api..!!";
@@ -38,23 +29,10 @@ public class HomeController {
 	@GetMapping("/{userId}")
 	public User getUser(@PathVariable("userId") Long userId) {
 		User user = userService.getUser(userId);
-//		System.out.println("user :"+user);
-		
-//		 restTemplate.getForObject("http://contactService/contact/user/"+user.getUserId(), List.class);
-//		List contact = restTemplate.getForObject("http://contactService/contact/user/"+user.getUserId(), List.class);
-//		java.util.List<Contact> contact = (java.util.List<Contact>) restTemplate.getForObject("http://contactService/contact/user/"+user.getUserId(), List.class);
-		
-//		List contact = restTemplate.getForObject("http://contactService/contact/user/"+user.getUserId(), List.class);
-		
 		String contact  =restTemplate.getForObject("http://contactService/contact/user/"+user.getUserId(), String.class);
-//		String contact = restTemplate.getForObject("http://localhost:9002/contact/user/"+userId, Contact.class);
-//		System.out.println("contact :"+contact);
-//		http://localhost:9002/contact/user/2912
 		user.setContacts(contact);
 		return user;
-//		return contact;
-		
-		
+	
 	}
 
 }

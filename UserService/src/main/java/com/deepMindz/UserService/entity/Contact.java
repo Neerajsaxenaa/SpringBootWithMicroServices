@@ -17,6 +17,15 @@ public class Contact {
 		this.contackName = contackName;
 		this.userid = userid;
 	}
+	
+	public Contact(Long cid, String email, String contackName) {
+		super();
+		this.cid = cid;
+		this.email = email;
+		this.contackName = contackName;
+	
+	}
+	
 	public Long getCid() {
 		return cid;
 	}
